@@ -9,6 +9,10 @@ import './App.css'
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'))
 const Services = lazy(() => import('./pages/Services'))
+const ResidentialServices = lazy(() => import('./pages/ResidentialServices'))
+const CommercialServices = lazy(() => import('./pages/CommercialServices'))
+const IndustrialServices = lazy(() => import('./pages/IndustrialServices'))
+const EmergencyServices = lazy(() => import('./pages/EmergencyServices'))
 const QuoteRequest = lazy(() => import('./pages/QuoteRequest'))
 const Blog = lazy(() => import('./pages/Blog'))
 const BlogDetail = lazy(() => import('./pages/BlogDetail'))
@@ -27,6 +31,10 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/services/residential" element={<ResidentialServices />} />
+                <Route path="/services/commercial" element={<CommercialServices />} />
+                <Route path="/services/industrial" element={<IndustrialServices />} />
+                <Route path="/services/emergency" element={<EmergencyServices />} />
                 <Route path="/quote" element={<QuoteRequest />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/blog" element={<Blog />} />

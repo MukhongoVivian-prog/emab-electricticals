@@ -108,7 +108,7 @@ const BlogDetail = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link
           to="/blog"
-          className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors duration-200"
+          className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors duration-200 font-body"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Blog</span>
@@ -123,8 +123,8 @@ const BlogDetail = () => {
           transition={{ duration: 0.5 }}
         >
           {/* Category and Meta */}
-          <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6">
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
+          <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6 font-body">
+            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-medium">
               {post.category}
             </span>
             <div className="flex items-center space-x-1">
@@ -138,34 +138,34 @@ const BlogDetail = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight font-heading">
             {post.title}
           </h1>
 
           {/* Author */}
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-primary font-semibold">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-blue-600 font-semibold font-body">
                   {post.author.split(' ').map(n => n[0]).join('')}
                 </span>
               </div>
               <div>
-                <div className="font-semibold text-foreground">{post.author}</div>
-                <div className="text-sm text-muted-foreground">Electrical Expert</div>
+                <div className="font-semibold text-foreground font-body">{post.author}</div>
+                <div className="text-sm text-muted-foreground font-body">Electrical Expert</div>
               </div>
             </div>
 
             {/* Social Share */}
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-muted-foreground">Share:</span>
-              <button className="p-2 text-muted-foreground hover:text-primary transition-colors duration-200">
+              <span className="text-sm text-muted-foreground font-body">Share:</span>
+              <button className="p-2 text-muted-foreground hover:text-blue-600 transition-colors duration-200">
                 <Facebook className="w-5 h-5" />
               </button>
-              <button className="p-2 text-muted-foreground hover:text-primary transition-colors duration-200">
+              <button className="p-2 text-muted-foreground hover:text-blue-600 transition-colors duration-200">
                 <Twitter className="w-5 h-5" />
               </button>
-              <button className="p-2 text-muted-foreground hover:text-primary transition-colors duration-200">
+              <button className="p-2 text-muted-foreground hover:text-blue-600 transition-colors duration-200">
                 <Linkedin className="w-5 h-5" />
               </button>
             </div>
@@ -182,18 +182,18 @@ const BlogDetail = () => {
 
           {/* Content */}
           <div 
-            className="prose prose-lg max-w-none"
+            className="prose prose-lg max-w-none font-body"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
           {/* Tags */}
           <div className="mt-12 pt-8 border-t border-border/50">
-            <h3 className="text-lg font-semibold text-foreground mb-4">Tags:</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4 font-heading">Tags:</h3>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-sm"
+                  className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-body"
                 >
                   {tag}
                 </span>
@@ -213,10 +213,10 @@ const BlogDetail = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4 font-heading">
               Related Articles
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground font-body">
               Continue reading with these related articles
             </p>
           </motion.div>
@@ -239,18 +239,18 @@ const BlogDetail = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="text-sm text-muted-foreground mb-2">
+                  <div className="text-sm text-muted-foreground mb-2 font-body">
                     {formatDate(relatedPost.date)}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl font-bold text-foreground mb-3 font-heading">
                     {relatedPost.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4 font-body">
                     {relatedPost.excerpt}
                   </p>
                   <Link
                     to={`/blog/${relatedPost.id}`}
-                    className="inline-flex items-center space-x-1 text-primary font-semibold hover:text-primary/80 transition-colors duration-200"
+                    className="inline-flex items-center space-x-1 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-200 font-body"
                   >
                     <span>Read More</span>
                     <ArrowLeft className="w-4 h-4 rotate-180" />

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import ServiceCard from '../components/ServiceCard'
 import HeroCarousel from '../components/HeroCarousel'
+import DownloadServicesSection from '../components/DownloadServicesSection'
 import { ArrowRight, Zap, Shield, Clock, Star, Wrench, Home, Building, AlertTriangle } from 'lucide-react'
 
 const Services = () => {
@@ -77,25 +78,33 @@ const Services = () => {
       title: 'Residential Services',
       description: 'Complete electrical solutions for homes and apartments',
       icon: Home,
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-blue-500 to-blue-600',
+      route: '/services/residential',
+      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop'
     },
     {
       title: 'Commercial Services',
       description: 'Electrical infrastructure for businesses and offices',
       icon: Building,
-      color: 'from-green-500 to-green-600'
+      color: 'from-green-500 to-green-600',
+      route: '/services/commercial',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop'
     },
     {
       title: 'Industrial Services',
       description: 'Heavy-duty electrical systems for manufacturing',
       icon: Wrench,
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-orange-500 to-orange-600',
+      route: '/services/industrial',
+      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop'
     },
     {
       title: 'Emergency Services',
       description: '24/7 emergency electrical repairs and support',
       icon: AlertTriangle,
-      color: 'from-red-500 to-red-600'
+      color: 'from-red-500 to-red-600',
+      route: '/services/emergency',
+      image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop'
     }
   ]
 
@@ -194,7 +203,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4 font-heading">
               Our Service Categories
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -204,22 +213,35 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {serviceCategories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group cursor-pointer"
-              >
-                <div className={`bg-gradient-to-br ${category.color} rounded-2xl p-8 text-white text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}>
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    {React.createElement(category.icon, { className: "w-8 h-8" })}
+              <Link key={category.title} to={category.route}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                >
+                  <div className={`bg-gradient-to-br ${category.color} rounded-2xl p-8 text-white text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden`}>
+                    {/* Background Image */}
+                    <div className="absolute inset-0 opacity-20">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        {React.createElement(category.icon, { className: "w-8 h-8" })}
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 font-heading">{category.title}</h3>
+                      <p className="text-white/90 text-sm font-body">{category.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{category.title}</h3>
-                  <p className="text-white/90 text-sm">{category.description}</p>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -235,7 +257,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4 font-heading">
               All Our Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -269,7 +291,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4 font-heading">
               Why Choose Our Services?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -307,7 +329,7 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 font-heading">
               Ready to Get Started?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -337,6 +359,9 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Download Services Section */}
+      <DownloadServicesSection />
     </div>
   )
 }

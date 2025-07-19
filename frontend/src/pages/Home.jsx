@@ -3,32 +3,27 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
-import { ArrowRight, Star, Quote, Users, Award, Clock, Shield, Zap, DollarSign, Truck } from 'lucide-react'
+import DownloadServicesSection from '../components/DownloadServicesSection'
+import { ArrowRight, Star, Quote, Users, Award, Clock, Shield, Zap, DollarSign, Truck, Download } from 'lucide-react'
 
 const Home = () => {
   const featuredServices = [
     {
-      title: 'Electrical Installation',
-      description: 'Complete electrical installation services for new construction and renovations.',
-      icon: 'installation',
-      features: ['Wiring & Outlets', 'Lighting Installation', 'Panel Upgrades', 'Code Compliance'],
-      priceRange: '500',
+      title: 'Circuit Installation',
+      description: 'Professional circuit installation and wiring services for residential and commercial properties.',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop',
       link: '/services#installation'
     },
     {
-      title: 'Maintenance & Repair',
-      description: 'Professional maintenance and repair services to keep your electrical systems running safely.',
-      icon: 'maintenance',
-      features: ['Troubleshooting', 'Component Replacement', 'Safety Inspections', 'Preventive Maintenance'],
-      priceRange: '150',
+      title: 'Electrical Maintenance',
+      description: 'Comprehensive maintenance services to ensure your electrical systems operate safely and efficiently.',
+      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop',
       link: '/services#maintenance'
     },
     {
-      title: 'Emergency Services',
-      description: '24/7 emergency electrical services for urgent repairs and power restoration.',
-      icon: 'emergency',
-      features: ['Power Outages', 'Electrical Failures', 'Safety Hazards', 'Quick Response'],
-      priceRange: '200',
+      title: 'Emergency Repairs',
+      description: '24/7 emergency electrical repair services for urgent power issues and safety hazards.',
+      image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop',
       link: '/services#emergency'
     }
   ]
@@ -111,8 +106,8 @@ const Home = () => {
                   {stat.icon === 'Clock' && <Clock className="w-8 h-8 text-primary" />}
                   {stat.icon === 'Star' && <Star className="w-8 h-8 text-primary" />}
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-3xl font-bold text-foreground mb-2 font-heading">{stat.number}</div>
+                <div className="text-muted-foreground font-body">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -130,28 +125,28 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-heading">
                 Why Choose <span className="text-blue-600">EmabElectrical</span>?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed font-body">
                 We're committed to delivering exceptional electrical services with the highest standards of quality, safety, and customer satisfaction. Our experienced team ensures reliable, efficient, and cost-effective solutions for all your electrical needs.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-foreground font-medium">Licensed and insured professionals</span>
+                  <span className="text-foreground font-medium font-body">Licensed and insured professionals</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-foreground font-medium">24/7 emergency service availability</span>
+                  <span className="text-foreground font-medium font-body">24/7 emergency service availability</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-foreground font-medium">Competitive pricing with transparent quotes</span>
+                  <span className="text-foreground font-medium font-body">Competitive pricing with transparent quotes</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-foreground font-medium">Proven track record of quality workmanship</span>
+                  <span className="text-foreground font-medium font-body">Proven track record of quality workmanship</span>
                 </div>
               </div>
             </motion.div>
@@ -170,8 +165,8 @@ const Home = () => {
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                     {React.createElement(feature.icon, { className: "w-6 h-6 text-blue-600" })}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2 font-heading">{feature.title}</h3>
+                  <p className="text-muted-foreground font-body">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -189,10 +184,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4 font-heading">
               Our Featured Services
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-body">
               Professional electrical services tailored to your needs. From installation to emergency repairs, 
               we've got you covered with quality workmanship and reliable service.
             </p>
@@ -243,10 +238,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4 font-heading">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-body">
               Don't just take our word for it. Here's what our satisfied clients have to say about our services.
             </p>
           </motion.div>
@@ -295,10 +290,10 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 font-heading">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto font-body">
               Get your free quote today and experience the difference of professional electrical services. 
               Our team is ready to help with your project.
             </p>
@@ -321,10 +316,29 @@ const Home = () => {
                   Contact Us
                 </motion.button>
               </Link>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-600 to-cyan-400 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-500 transition-all duration-200 flex items-center space-x-2"
+                aria-label="Download Brochure"
+                onClick={() => {
+                  // Create a temporary link to download the brochure
+                  const link = document.createElement('a');
+                  link.href = '/brochure.pdf'; // This should be placed in the public folder
+                  link.download = 'EmabElectrical-Brochure.pdf';
+                  link.click();
+                }}
+              >
+                <Download className="w-5 h-5" />
+                <span>Download Brochure</span>
+              </motion.button>
             </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Download Services Section */}
+      <DownloadServicesSection />
     </div>
   )
 }

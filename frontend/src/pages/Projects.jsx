@@ -8,7 +8,7 @@ const Projects = () => {
 
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&h=1080&fit=crop',
+      image: 'src/assets/images/pic1.jpg',
       badge: {
         icon: Zap,
         text: 'Our Portfolio'
@@ -29,7 +29,7 @@ const Projects = () => {
       ]
     },
     {
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop',
+      image: 'src/assets/images/pic2.jpg',
       badge: {
         icon: Building,
         text: 'Commercial Projects'
@@ -50,7 +50,7 @@ const Projects = () => {
       ]
     },
     {
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1920&h=1080&fit=crop',
+      image: 'src/assets/images/pic3.jpg',
       badge: {
         icon: Home,
         text: 'Residential Projects'
@@ -78,7 +78,7 @@ const Projects = () => {
       title: 'Modern Home Electrical Upgrade',
       category: 'residential',
       description: 'Complete electrical system upgrade for a 3-bedroom modern home, including smart home integration and energy-efficient lighting.',
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop',
+      image: 'src/assets/images/pic4.jpg',
       features: ['Smart Home Integration', 'LED Lighting', 'Panel Upgrade', 'Safety Inspection'],
       completionDate: '2024-01-15',
       rating: 5
@@ -88,7 +88,7 @@ const Projects = () => {
       title: 'Commercial Office Wiring',
       category: 'commercial',
       description: 'Comprehensive electrical installation for a 10,000 sq ft office building with advanced security systems.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop',
+      image: 'src/assets/images/pic.jpg',
       features: ['Security Systems', 'Network Infrastructure', 'Emergency Lighting', 'HVAC Controls'],
       completionDate: '2024-01-10',
       rating: 5
@@ -98,7 +98,7 @@ const Projects = () => {
       title: 'Industrial Panel Installation',
       category: 'industrial',
       description: 'High-capacity electrical panel installation for manufacturing facility with specialized equipment.',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
+      image: 'src/assets/images/pic2.jpg',
       features: ['High-Capacity Panels', 'Equipment Integration', 'Safety Systems', 'Monitoring'],
       completionDate: '2024-01-05',
       rating: 5
@@ -108,7 +108,7 @@ const Projects = () => {
       title: 'Emergency Power System',
       category: 'emergency',
       description: 'Backup power system installation for critical infrastructure with automatic failover capabilities.',
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop',
+      image: 'src/assets/images/pic3.jpg',
       features: ['Backup Generators', 'UPS Systems', 'Automatic Failover', '24/7 Monitoring'],
       completionDate: '2023-12-28',
       rating: 5
@@ -118,7 +118,7 @@ const Projects = () => {
       title: 'Retrofit Lighting Project',
       category: 'residential',
       description: 'Energy-efficient lighting retrofit for apartment complex with smart controls and motion sensors.',
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop',
+      image: 'src/assets/images/pic4.jpg',
       features: ['LED Retrofit', 'Smart Controls', 'Motion Sensors', 'Energy Savings'],
       completionDate: '2023-12-20',
       rating: 5
@@ -128,7 +128,7 @@ const Projects = () => {
       title: 'Data Center Electrical',
       category: 'commercial',
       description: 'Critical electrical infrastructure for data center with redundant systems and cooling.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+      image: 'src/assets/images/pic1.jpg',
       features: ['Redundant Systems', 'Cooling Infrastructure', 'Monitoring', 'Security'],
       completionDate: '2023-12-15',
       rating: 5

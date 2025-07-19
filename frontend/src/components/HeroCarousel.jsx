@@ -62,11 +62,11 @@ const HeroCarousel = ({ slides, autoPlay = true, interval = 5000 }) => {
                    </div>
                  )}
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
                   {slides[currentSlide].title}
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-body">
                   {slides[currentSlide].description}
                 </p>
 
@@ -77,7 +77,7 @@ const HeroCarousel = ({ slides, autoPlay = true, interval = 5000 }) => {
                         key={index}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className={`px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 ${
+                        className={`px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 font-body ${
                           button.primary 
                             ? 'bg-white text-blue-900 hover:bg-white/90' 
                             : 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-900'
@@ -94,8 +94,8 @@ const HeroCarousel = ({ slides, autoPlay = true, interval = 5000 }) => {
                   <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
                     {slides[currentSlide].stats.map((stat, index) => (
                       <div key={index} className="text-center">
-                        <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                        <div className="text-white/70 text-sm">{stat.label}</div>
+                        <div className="text-3xl font-bold text-white mb-2 font-heading">{stat.value}</div>
+                        <div className="text-white/70 text-sm font-body">{stat.label}</div>
                       </div>
                     ))}
                   </div>
