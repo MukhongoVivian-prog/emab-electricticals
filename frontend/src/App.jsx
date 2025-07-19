@@ -20,6 +20,11 @@ const Contact = lazy(() => import('./pages/Contact'))
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Projects = lazy(() => import('./pages/Projects'))
 
+// Dashboard pages
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'))
+const UserDashboard = lazy(() => import('./pages/UserDashboard'))
+const DashboardDemo = lazy(() => import('./pages/DashboardDemo'))
+
 function App() {
   return (
     <Router>
@@ -41,6 +46,13 @@ function App() {
                 <Route path="/blog/:slug" element={<BlogDetail />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                
+                {/* Dashboard Routes */}
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/admin/*" element={<AdminDashboard />} />
+                <Route path="/user-dashboard" element={<UserDashboard />} />
+                <Route path="/user-dashboard/*" element={<UserDashboard />} />
+                <Route path="/dashboard-demo" element={<DashboardDemo />} />
               </Routes>
             </AnimatePresence>
           </Suspense>
